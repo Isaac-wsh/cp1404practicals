@@ -6,7 +6,7 @@ Broken program to determine score status
 import random
 
 def main():
-    score = float(input("Enter score: "))
+    score = int(input("Enter score: "))
     result = get_result(score)
     print(result)
 
