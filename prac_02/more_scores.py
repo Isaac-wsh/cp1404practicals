@@ -20,6 +20,7 @@ def main():
         file.write(str(random_score3) + " is " + random_result3 + "\n")
 
 def get_result(score):
+    """Determine the level of results"""
     if 0 > score or score> 100:
         return "Invalid score"
     else:

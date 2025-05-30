@@ -32,6 +32,7 @@ def main():
 
 
 def get_score():
+    """Get the score"""
     score = int(input("Enter a score: "))
     while score < 0 or score > 100:
         print("Invalid score.")
@@ -39,6 +40,7 @@ def get_score():
     return score
 
 def get_result(score):
+    """Determine the level of results"""
     if 0 > score or score> 100:
         return "Invalid score"
     else:

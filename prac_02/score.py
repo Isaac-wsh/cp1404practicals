@@ -16,6 +16,7 @@ def main():
     print(random_result)
 
 def get_result(score):
+    """Determine the level of results"""
     if 0 > score or score> 100:
         return "Invalid score"
     else:
