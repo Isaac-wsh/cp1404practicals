@@ -36,10 +36,8 @@ almost_numbers = ['0', '10', '21', '3', '-7', '88', '9']
 numbers = [int(number) for number in almost_numbers]
 print(numbers)
 
-# TODO: list comprehension to create a list of only the numbers that are
-# greater than 9 from the numbers (not strings) you just created
-# new_numbers = [number_over_9 for number_over_9 in numbers if number_over_9 > 9]
-# print(new_numbers)
+new_numbers = [number_over_9 for number_over_9 in numbers if number_over_9 > 9]
+print(new_numbers)
 
 # TODO: (more advanced) use a list comprehension and the join string method
 # to create a string (not list) of the last names for those full names longer than 11 characters
