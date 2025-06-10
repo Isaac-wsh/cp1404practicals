@@ -18,3 +18,6 @@ def calculate_average(number):
     return sum(number) / len(number)
 average = calculate_average(numbers)
 print(f"The average of the numbers is {average}")
+
+usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn',
+             'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer', 'bob']
