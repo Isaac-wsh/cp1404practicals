@@ -10,7 +10,7 @@ numbers.append(number3)
 numbers.append(number4)
 numbers.append(number5)
 print(f"The first number is {numbers[0]}")
-# print(f"The last number is {numbers[-1]}")
+print(f"The last number is {numbers[-1]}")
 # print(f"The smallest number is {min(numbers)}")
 # print(f"The largest number is {max(numbers)}")
 # def calculate_average(number):
