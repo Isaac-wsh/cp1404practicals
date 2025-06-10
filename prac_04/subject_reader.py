@@ -9,6 +9,7 @@ FILENAME = "subject_data.txt"
 def main():
     data = load_data()
     print(data)
+    display_details(data)
 
 
 def load_data():
@@ -27,6 +28,13 @@ def load_data():
         nested_list.append(parts)  # Save the list to the created list
     input_file.close()
     return nested_list
+
+def display_details(data):
+    for detail in data:
+        subject = detail[0]
+        lecturer = detail[1]
+        student_numbers = detail[2]
+        print(f"{subject} is taught by {lecturer} and has {student_numbers} students")
 
 
 main()
