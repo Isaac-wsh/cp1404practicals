@@ -12,12 +12,10 @@ print(COLOR_TO_CODE)
 
 input_name = input("Enter color name: ")
 while input_name != "":
-    name_separated = input_name.split(",")
-    for code in name_separated:
-        try:
-            for dict_key in COLOR_TO_CODE:
-                if user_input.casefold() == dict_key.casefold():
-            print(f"{code:<17} is {COLOR_TO_CODE[code]}")
+    name_separated = input_name.casefold().split(",")
+    for color in name_separated:
+        try :
+            print(f"{color:<20} is {COLOR_TO_CODE[color]}")
         except KeyError:
-            print(f"{code:<17} is Invalid short state")
-        color_code = input("Enter short state: ")
+            print(f"{color:<20} is Invalid color name")
+    input_name = input("Enter color name: ")
