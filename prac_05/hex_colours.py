@@ -16,10 +16,12 @@ for name in COLOR_TO_CODE:
 
 input_name = input("Enter color name: ")
 while input_name != "":
-    name_separated = input_name.casefold().split(",")
+    name_separated = input_name.split(",")
     for color in name_separated:
+        color = color.strip().lower()
         try :
-            print(f"{color:<20} is {COLOR_TO_CODE[color]}")
+            original_name = lower_color_dict[color]
+            print(f"{original_name:<20} is {COLOR_TO_CODE[original_name]}")
         except KeyError:
             print(f"{color:<20} is Invalid color name")
     input_name = input("Enter color name: ")
