@@ -36,3 +36,9 @@ def display_champions(champion_data):
     print("Wimbledon Champions:")
     for name, count in champion_data:
         print(f"{name} {count}")
+
+def display_countries(countries):
+    """Print the winning countries and sort them"""
+    sorted_countries = sorted(countries)
+    print(f"\nThese {len(sorted_countries)} countries have won Wimbledon:")
+    print(", ".join(sorted_countries))
