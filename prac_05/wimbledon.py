@@ -9,24 +9,30 @@ def main():
 
 def read_data(filename):
     """Read the file and return the champion and country"""
-    import csv
     champions = []
     countries = set()
     with open(filename, "r", encoding="utf-8-sig") as in_file:
-        reader = csv.DictReader(in_file)
-        for row in reader:
-            champion = row["Champion"]
-            country = row["Country"]
+        lines = in_file.readlines()[1:]
+        for line in lines:
+            parts = line.strip().split(",")
+            country = parts[1]
+            champion = parts[2]
             champions.append(champion)
             countries.add(country)
     return champions, countries
 
 def count_champions(champions):
     """Count the number of times each champion has won, sort the list, and return"""
-    champion_counts = {}  # 普通字典
+    champion_counts = {}
     for champion in champions:
         if champion in champion_counts:
             champion_counts[champion] += 1
         else:
             champion_counts[champion] = 1
     return sorted(champion_counts.items())
+
+def display_champions(champion_data):
+    """Print champion and number of wins"""
+    print("Wimbledon Champions:")
+    for name, count in champion_data:
+        print(f"{name} {count}")
