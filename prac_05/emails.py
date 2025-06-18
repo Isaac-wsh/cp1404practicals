@@ -6,3 +6,5 @@ Actual:   32 minutes
 
 email_to_name = {}
 email  = input("Email: ")
+while email:
+    email_name = email.split("@")[0].title()
