@@ -14,3 +14,7 @@ while email != "":
     else:
         name = email_name
     email_to_name[email] = name
+    email = input("Email: ")
+
+for email, name in email_to_name.items():
+    print(f"{name} ({email})")
