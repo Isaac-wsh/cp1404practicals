@@ -20,3 +20,13 @@ def read_data(filename):
             champions.append(champion)
             countries.add(country)
     return champions, countries
+
+def count_champions(champions):
+    """Count the number of times each champion has won, sort the list, and return"""
+    champion_counts = {}  # 普通字典
+    for champion in champions:
+        if champion in champion_counts:
+            champion_counts[champion] += 1
+        else:
+            champion_counts[champion] = 1
+    return sorted(champion_counts.items())
