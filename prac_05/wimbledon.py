@@ -6,6 +6,10 @@ Actual:    minutes
 
 def main():
     filename = "wimbledon.csv"
+    champions, countries = read_data(filename)
+    champion_data = count_champions(champions)
+    display_champions(champion_data)
+    display_countries(countries)
 
 def read_data(filename):
     """Read the file and return the champion and country"""
@@ -42,3 +46,5 @@ def display_countries(countries):
     sorted_countries = sorted(countries)
     print(f"\nThese {len(sorted_countries)} countries have won Wimbledon:")
     print(", ".join(sorted_countries))
+
+main()
