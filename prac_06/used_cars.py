@@ -15,7 +15,8 @@ def main():
     print(my_car)
 
 class limo:
-    fuel = 100
+    def __init__(self):
+        self.fuel = 100
 
 
 
