@@ -13,11 +13,6 @@ def main():
     my_car.drive(30)
     print(f"Car has fuel: {my_car.fuel}")
     print(my_car)
-
-class limo:
-    def __init__(self):
-        self.fuel = 100
-
-
+    limo = Car(100)
 
 main()
