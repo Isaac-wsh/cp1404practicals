@@ -1,3 +1,8 @@
+"""
+Estimate: 30 minutes
+Actual:  60 minutes
+"""
+
 class Guitar:
     def __init__(self, name="", year=0, cost=0):
         """With defaults name="", year=0, cost=0"""
