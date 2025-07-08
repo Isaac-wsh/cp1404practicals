@@ -1,5 +1,11 @@
 from project import Project
 
+def main():
+    filename = "projects.txt"
+    projects = load_project(filename)
+    for project in projects:
+        print(project)
+
 def load_project(filename):
     """Load project data from the file"""
     projects = []
@@ -16,3 +22,5 @@ def load_project(filename):
         projects.append(project)
     in_file.close()
     return projects
+
+main()
