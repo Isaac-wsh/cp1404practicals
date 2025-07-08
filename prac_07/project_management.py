@@ -9,6 +9,45 @@ def main():
     #     print(project)
     # save_projects("projects_saved.txt", projects)
     # display_projects(projects)
+    print("Welcome to Pythonic Project Management")
+    print(f"Loaded {len(projects)} projects from projects.txt")
+    user_choice = ""
+    while user_choice != "q":
+        display_menu()
+        user_choice = input(">>> ").strip().lower()
+        if user_choice == "l":
+            projects = load_project(filename)
+            print(f"{len(projects)} projects loaded from projects.txt")
+        elif user_choice == "s":
+            save_projects(filename, projects)
+            print(f"{len(projects)} projects saved to projects.txt")
+        elif user_choice == "d":
+            display_projects(projects)
+        elif user_choice == "f":
+            input_date = input("Show projects that start after date (dd/mm/yy): ")
+            filter_by_date(projects, input_date)
+        elif user_choice == "a":
+            print("Let's add a new project")
+            new_project = add_new_project()
+            projects.append(new_project)
+        elif user_choice == "u":
+            update_project(projects)
+        elif user_choice == "q":
+            save_input = input("Would you like to save to projects.txt? ").strip().lower()
+            if save_input in ["y", "yes"]:
+                save_projects(filename, projects)
+            else:
+                print("no, I think not.")
+            print("Thank you for using custom-built project management software.")
+
+def display_menu():
+    print("- (L)oad projects")
+    print("- (S)ave projects")
+    print("- (D)isplay projects")
+    print("- (F)ilter projects by date")
+    print("- (A)dd new project")
+    print("- (U)pdate project")
+    print("- (Q)uit")
 
 def load_project(filename):
     """Load project data from the file"""
@@ -102,7 +141,7 @@ def update_project(projects):
         print("Invalid choice")
         return None
     print(project)
-    completion_input = input("New Percent Complete: ")
+    completion_input = input("New Percent: ")
     priority_input = input("New Priority: ")
     if completion_input != "":
         try:
