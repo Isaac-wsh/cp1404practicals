@@ -12,7 +12,7 @@ class Project:
     def __int__(self, name, start_time, priority, estimate, completion):
         """Initialize the project object"""
         self.name = name
-        self.start_time = start_time
+        self.start_time = datatime.strptime(start_time, "%d/%m/%Y").date()
         self.priority = int(priority)
         self.estimate = float(estimate)
         self.completion = int(completion)
