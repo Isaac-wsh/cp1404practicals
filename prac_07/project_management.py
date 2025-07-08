@@ -54,6 +54,9 @@ def display_projects(projects):
     for project in complete:
         print(f"{   project}")
 
+def get_start_time(project):
+    """Return the start_time of a Project object"""
+    return project.start_time
 
 
 main()
