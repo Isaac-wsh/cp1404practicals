@@ -1,6 +1,6 @@
 """
-Estimate: 40 minutes
-Actual:   minutes
+Estimate: 2 hours
+Actual: 6 hours
 """
 
 from datetime import datetime
