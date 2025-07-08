@@ -4,6 +4,7 @@ from datetime import datetime
 filename = "projects.txt"
 
 def main():
+    """The main function to run the project management program."""
     projects = load_project(filename)
     # for project in projects:
     #     print(project)
@@ -41,6 +42,7 @@ def main():
             print("Thank you for using custom-built project management software.")
 
 def display_menu():
+    """Show menu to users"""
     print("- (L)oad projects")
     print("- (S)ave projects")
     print("- (D)isplay projects")
