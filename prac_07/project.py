@@ -26,9 +26,14 @@ class Project:
         """Automatically sort Project objects by priority"""
         return self.priority < other.priority
 
-p1 = Project("A", "01/01/2024", 1, 100.0, 50)
-p2 = Project("B", "01/01/2024", 3, 100.0, 50)
+    def is_complete(self):
+        """Return True if the project is 100% complete."""
+        return self.completion == 100
 
-print(p1)
-print(p2)
-print(p1 < p2)
+# p1 = Project("A", "01/01/2024", 1, 100.0, 50)
+# p2 = Project("B", "01/01/2024", 3, 100.0, 50)
+#
+# print(p1)
+# print(p2)
+# print(p1 < p2)
+
