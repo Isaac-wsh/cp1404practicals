@@ -17,7 +17,7 @@ def main():
     guitars.sort()
     for guitar in guitars:
         print(guitar)
-
+    save_guitars("guitars.csv", guitars)
 
 def load_guitars(filename):
     """Read guitars from file and return list of Guitar."""
