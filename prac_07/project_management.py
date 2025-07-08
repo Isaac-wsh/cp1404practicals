@@ -1,11 +1,13 @@
 from project import Project
 
+filename = "projects.txt"
+
 def main():
-    filename = "projects.txt"
     projects = load_project(filename)
-    for project in projects:
-        print(project)
-    save_projects("projects_saved.txt", projects)
+    # for project in projects:
+    #     print(project)
+    # save_projects("projects_saved.txt", projects)
+    # display_projects(projects)
 
 def load_project(filename):
     """Load project data from the file"""
@@ -27,11 +29,31 @@ def load_project(filename):
 def save_projects(filename, projects):
     """Save a list of data to a file"""
     out_file = open(filename, "w")
-    print("Name\tStart Date\tPriority\tCost Estimate\tPercent Complete", file=out_file)
+    print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=out_file)
     for project in projects:
         line = f"{project.name}\t{project.start_time.strftime('%d/%m/%Y')}\t" \
                f"{project.priority}\t{project.estimate:.2f}\t{project.completion}"
         print(line, file = out_file)
     out_file.close()
+
+def display_projects(projects):
+    """Display incomplete and complete projects and sorted by priority."""
+    incomplete = []
+    complete = []
+    for project in projects:
+        if project.is_complete():
+            complete.append(project)
+        else:
+            incomplete.append(project)
+    incomplete.sort()
+    complete.sort()
+    print("Incomplete projects:")
+    for project in incomplete:
+        print(f"{   project}")
+    print("Completed projects:")
+    for project in complete:
+        print(f"{   project}")
+
+
 
 main()
