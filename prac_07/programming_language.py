@@ -20,6 +20,10 @@ class ProgrammingLanguage:
         return (f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, "
                 f"Pointer Arithmetic={self.pointer_arithmetic}, First appeared in {self.year}")
 
+    def __str__(self):
+        """Returns a string for user"""
+        return f"{self.name} ({self.typing} Typing) - Reflection: {self.reflection}, Pointer Arithmetic: {self.pointer_arithmetic}, Year: {self.year}"
+
     def is_dynamic(self):
         """Determine if language is dynamically typed."""
         return self.typing == "Dynamic"
