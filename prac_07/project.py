@@ -16,3 +16,9 @@ class Project:
         self.priority = int(priority)
         self.estimate = float(estimate)
         self.completion = int(completion)
+
+    def __str__(self):
+        """Return a string representation of the project"""
+        return (f"{self.name}, start: {self.start_time.strftime("%d/%m/%Y")},"
+                f"priority {self.priority}, estimate:${self.estimate:.2f},"
+                f"completion:{self.completion}%")
