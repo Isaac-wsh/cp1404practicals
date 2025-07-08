@@ -64,7 +64,7 @@ def filter_by_date(projects, date_str):
     try:
         filter_date = datetime.strptime(date_str, "%d/%m/%Y").date()
     except ValueError:
-        print("Invalid date format. Please use dd/mm/yyyy.")
+        print("Invalid date format. Please use dd/mm/yy.")
         return None
     filtered_projects = []
     for project in projects:
@@ -73,6 +73,24 @@ def filter_by_date(projects, date_str):
     filtered_projects.sort(key=get_start_time)
     for project in filtered_projects:
         print(project)
+
+def add_new_project():
+    """Prompt the user to input details for a new project and return a Project"""
+    name = input("Name: ")
+    start_time = input("Start date (dd/mm/yy): ")
+    date_valid = False
+    while not date_valid:
+        try:
+            datetime.strptime(start_time, "%d/%m/%Y")
+            date_valid = True
+        except ValueError:
+            print("Invalid date format. Please use dd/mm/yy.")
+            start_time = input("Start date (dd/mm/yy): ")
+    priority = int(input("Priority: "))
+    estimate = float(input("Cost estimate: $"))
+    completion = int(input("Percent complete: "))
+    return Project(name, start_time, priority, estimate, completion)
+
 
 
 main()
