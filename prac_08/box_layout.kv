@@ -4,7 +4,9 @@ BoxLayout:
     Button:
         text: 'Clear'
     Button:
-        text: 'two'
+        TextInput:
+            id: input_name
+            text: ''
     Button:
         text: 'Greet'
         on_press: app.handle_greet()
