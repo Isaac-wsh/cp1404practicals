@@ -11,7 +11,7 @@ class BoxLayoutDemo(App):
     def handle_greet(self):
         """Add a button handler"""
         print("test")
-        self.root.ids.output_label.text = "Hello "
+        self.root.ids.output_label.text = f"Hello {self.root.ids.input_name.text}"
 
 
 BoxLayoutDemo().run()
