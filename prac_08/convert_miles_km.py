@@ -31,6 +31,7 @@ class MilesConverterApp(App):
             miles = 0
         miles += 1
         self.root.ids.input_miles.text = str(miles)
+        self.handle_convert()
 
     def handle_down(self):
         """Decrease miles input by 1."""
@@ -40,5 +41,6 @@ class MilesConverterApp(App):
             miles = 0
         miles -= 1
         self.root.ids.input_miles.text = str(miles)
+        self.handle_convert()
 
 MilesConverterApp().run()
