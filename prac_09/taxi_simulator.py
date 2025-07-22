@@ -12,6 +12,7 @@ def main():
     while choice != "q":
         if choice == "c":
 
+
 def display_taxis(taxis):
     """Display the list of taxis with their index."""
     print("Taxis available: ")
