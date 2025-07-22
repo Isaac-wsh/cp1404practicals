@@ -8,3 +8,7 @@ class Band:
         """Add a musician to the band"""
         self.musicians.append(musician)
 
+    def __str__(self):
+        """Return the string"""
+        member = ", ".join(str(musician) for musician in self.musicians)
+        return f"{self.name} ({member})"
