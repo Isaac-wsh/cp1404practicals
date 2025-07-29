@@ -40,12 +40,15 @@ def run_tests():
     # this should pass (no output)
     car = Car()
     assert car._odometer == 0, "Car does not set odometer correctly"
+    car = Car()
+    assert car.fuel == 0, "Default fuel should be 0"
 
     # TODO: 2. write assert statements to show if Car sets the fuel correctly
     # Note that Car's __init__ function sets the fuel in one of two ways:
     # using the value passed in or the default
     # You should test both of these
     car = Car(fuel=10)
+    assert car.fuel == 10, "Fuel not set correctly with given value"
 
 
 run_tests()
